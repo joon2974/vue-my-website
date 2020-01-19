@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-vue",
+  "version": "1.0.0",
+  "description": "my first nuxt application",
+  "author": "joon2974",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.9.3",
+    "axios": "^0.19.1",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "mysql": "^2.17.1",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}
