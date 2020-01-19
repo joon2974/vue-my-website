@@ -70,7 +70,7 @@
                     {
                         icon: 'mdi-chat',
                         title: 'Chatting',
-                        to: '/newpage'
+                        to: '/chatLogin'
                     }
                 ],
                 miniVariant: false,
