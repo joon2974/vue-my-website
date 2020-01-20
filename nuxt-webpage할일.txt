@@ -1,0 +1,11 @@
+Nuxt my web page 수정요소
+
+1. 오토스크롤 -> watch는 변수로 data로 √
+2. 입력창 길이 조절 √
+3. 알림문구 글자색깔 √
+4. 메세지 글자들 조정 √ --- 2020.01.20
+5. 현재 방 이름
+6. 현재 방 참여자
+참고 url
+- https://stfalcon.com/en/blog/post/chat-app-creation-vue.js-nuxt.js-node.js-socket.io-vue-socket.io-vuetify.js-technolog
+- https://github.com/psborul/nuxt-chat-app/blob/master/layouts/default.vue

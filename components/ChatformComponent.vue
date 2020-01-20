@@ -7,6 +7,7 @@
     @click:append="send"
     @keydown.enter="send"
     append-icon="mdi-send-circle-outline"
+    class="inputText"
   />
 </template>
 
@@ -17,7 +18,7 @@
             text: "",
         }),
         computed: {
-            ...mapState(["user"])
+            ...mapState(["user"]),
         },
         methods: {
             send() {
@@ -37,3 +38,26 @@
         }
     };
 </script>
+
+<style>
+@media screen and (min-width: 1264px){
+  .inputText{
+    width: 700px;
+  }
+}
+  @media screen and (min-width: 960px) and (max-width: 1263px){
+    .inputText{
+      width: 650px;
+    }
+  }
+@media screen and (min-width: 600px) and (max-width: 959px){
+  .inputText{
+    width: 420px;
+  }
+}
+@media screen and (max-width: 599px){
+  .inputText{
+    width: 300px;
+  }
+}
+</style>

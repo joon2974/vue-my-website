@@ -29,7 +29,7 @@
 <style lang="scss" scoped>
   .system {
     margin-bottom: 1rem;
-    color: #fff;
+    color: #000;
     p {
       margin-bottom: 1rem;
     }

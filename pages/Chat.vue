@@ -101,7 +101,7 @@
             messages(){
                 // 채팅 출력창을 watch하여 데이터가 갱신될 때마다 스크롤을 맨 아래로 내려준다.
                 setTimeout(() => {
-                    this.$refs.chat.$el.scrollTop = this.$refs.chat.$el.scrollHeight
+                    this.$refs.chat.scrollTop = this.$refs.chat.scrollHeight
                 }, 0);
             },
         }
