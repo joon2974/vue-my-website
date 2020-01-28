@@ -35,7 +35,7 @@
 
     </v-app-bar>
     <v-content>
-      <v-container>
+      <v-container @click.stop="closeMenu">
         <nuxt />
       </v-container>
     </v-content>
@@ -77,6 +77,11 @@
                 right: true,
                 rightDrawer: false,
                 title: "joon's Page"
+            }
+        },
+        methods:{
+            closeMenu(){
+                this.drawer = false;
             }
         }
     }

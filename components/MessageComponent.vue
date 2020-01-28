@@ -61,11 +61,12 @@
       margin-left: 15px;
     }
     &__text {
+      font-weight: 300;
       margin-bottom: 0;
     }
   }
   .owner {
-    background: #fff;
+    background: #f5f5f5;
     color: #000;
     align-self: flex-end;
   }
