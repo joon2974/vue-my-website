@@ -82,4 +82,13 @@
         -> jwt, navigation guard
 <hr/>
 
+### 4. 작업사항(2020.02.01)
+    1. Todo App을 만들기 위해 TodoPage를 추가
+    2. store에 todo용 Vuex 추가
+    3. TodoInput, TodoComponent Component 추가
+    - 문제점
+        1. TodoInput에서 axios를 통해 서버로 변경 내용을 post하는 부분이 에러 발생
+        -> post는 되지만 전달 object가 서버에 전달이 안됨!!
+        2. TodoComponent가 화면에 나타나지 않음
+
  

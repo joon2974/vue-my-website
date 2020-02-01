@@ -65,7 +65,7 @@
                     {
                         icon: 'mdi-briefcase-outline',
                         title: 'Todo App',
-                        to: '/inspire'
+                        to: '/TodoPage'
                     },
                     {
                         icon: 'mdi-chat',
