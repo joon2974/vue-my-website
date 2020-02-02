@@ -25,6 +25,7 @@
   import ChoiceButton from "../components/ChoiceButton";
 
   export default {
+      //DOM 생성 전에 실행되므로 내부에서 this를 쓸 수 없다!!
       asyncData(){
           return axios.get('http://localhost:3000/api/todo')
               .then((res) => {

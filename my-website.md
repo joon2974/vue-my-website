@@ -119,5 +119,9 @@
         
         -> this.$store.commit('todo/undoTodo', this.todoInfo); 와 같이
         mutation 명을 호출할 때 앞에 store 이름을 붙임
+        
+    - 앞으로 할일
+        -> 게시판 CURD 구현
+        -> 로그인 기능 추가
 
  
