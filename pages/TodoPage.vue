@@ -8,11 +8,10 @@
         <v-card-actions>
           <todo-input></todo-input>
         </v-card-actions>
-        <v-card-text>
-          왜 안나와
-          {{todoList}}
-          <todo-component v-for="(todo, index) in todoList" :key="`todo-${index}`" :todoInfo="todo"></todo-component>
-        </v-card-text>
+        <v-card-actions class="justify-center">
+          <choice-button></choice-button>
+        </v-card-actions>
+        <todo-component v-for="(todo, index) in todoList" :key="`todo-${index}`" :todoInfo="todo"></todo-component>
       </v-card>
     </v-flex>
   </v-layout>
@@ -20,27 +19,38 @@
 
 <script>
   import axios from 'axios';
-  import {mapState, mapMutations} from 'vuex';
-  import store from '../store/todo';
+  import {mapMutations} from 'vuex';
   import TodoInput from "../components/TodoInput";
   import TodoComponent from "../components/TodoComponent";
+  import ChoiceButton from "../components/ChoiceButton";
 
   export default {
+      asyncData(){
+          return axios.get('http://localhost:3000/api/todo')
+              .then((res) => {
+                  return {todoData: res.data}
+              });
+      },
       computed: {
-        ...mapState(['todoList']),
+          todoList(){
+              return this.$store.state.todo.todoList;
+          },
+          choice(){
+              return this.$store.state.todo.choice;
+          }
       },
       components: {
           'todo-input': TodoInput,
-          'todo-component': TodoComponent
+          'todo-component': TodoComponent,
+          'choice-button': ChoiceButton
       },
       methods: {
-        ...mapMutations(['setTodo']),
+        ...mapMutations({
+            setTodo: 'todo/setTodo'
+        }),
       },
       created() {
-          axios.get('http://localhost:3000/api/todo')
-              .then((res) => {
-                  store.commit('setTodo', res.data);
-              });
-      }
+          this.$store.commit('todo/setTodo',this.todoData);
+      },
   }
 </script>

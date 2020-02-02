@@ -23,6 +23,7 @@
         - GCP의 SQL 인스턴스를 사용했으며 새로운 환경에서 접속할 때에는 ip주소를
         추가해주어야 한다. -> 향후 개선 필요
         - 접속 방법: mysql --host=[sql ip주소] --user=root --password
+        - mysql --host=34.84.31.32 --user=root --password
         
     3. components 폴더
         - layouts나 pages에서 사용할 컴포넌트들을 정의하여 저장해 놓은 폴더
@@ -84,11 +85,39 @@
 
 ### 4. 작업사항(2020.02.01)
     1. Todo App을 만들기 위해 TodoPage를 추가
+    
     2. store에 todo용 Vuex 추가
+    
     3. TodoInput, TodoComponent Component 추가
+    
     - 문제점
         1. TodoInput에서 axios를 통해 서버로 변경 내용을 post하는 부분이 에러 발생
         -> post는 되지만 전달 object가 서버에 전달이 안됨!!
+        
         2. TodoComponent가 화면에 나타나지 않음
+<hr/>
+
+### 5. 작업사항(2020.02.02)
+    1. api 서버에서 axios의 post body값을 받지 못하는 문제 해결
+        -> bodyparser를 사용하지 않았음...ㅠㅠ
+        
+        -> 최신 express는 body-parser모듈이 내장되어 있어
+        -app.use('/boardData', require('./boardData'));
+        -app.use('/todo', require('./todo')); 사용
+        
+    2. TodoComponent가 화면에 나타나지 않았던 것은 Vuex의 mapState문제였음
+        -> Nuxt에서는 Store 폴더에서 모든 Vuex를 관리하는데, 최근 버전에서는 
+        Store의 클래식 모드(export default로 시작하는)를 지원하지 않고
+        모듈 모드만을 지원한다고 한다.
+        
+        -> 따라서 Store폴더의 todo.js를 모듈형 Vuex로 변환하였다.
+        
+        -> 이후 TodoPage에서 mapstate대신 computed 내에서 this.$store.todo.todoList
+        와 같이 불러서 State를 사용하였다.
+        
+        -> mapMutation의 사용법도 조금은 다르니 참고할것!!!
+        
+        -> this.$store.commit('todo/undoTodo', this.todoInfo); 와 같이
+        mutation 명을 호출할 때 앞에 store 이름을 붙임
 
  
