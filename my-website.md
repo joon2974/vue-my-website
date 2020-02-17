@@ -123,5 +123,19 @@
     - 앞으로 할일
         -> 게시판 CURD 구현
         -> 로그인 기능 추가
+<hr/>
+        
+###6. 작업사항(2020.02.17)
+    1. login할 때 jwt발급하는 기능 구현
+    -> 이후 router를 통해 페이지 이동함
+    2. default layout에 login버튼 추가
+    
+    - 앞으로 할일
+        -> 로그인 했을 때, Vuex의 isAdmin true(jwt해독해서 type이 admin이면)
+        -> admin일 때 보이는 태그, 안보이는 태그 구분
+        -> 위지웍 추가
+        -> db서버 구현
+        
+
 
  

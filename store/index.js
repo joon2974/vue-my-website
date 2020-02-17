@@ -1,7 +1,8 @@
 export const state = () => ({
   user: {},
   messages: [],
-  users: []
+  users: [],
+  isAdmin: false
 });
 
 export const mutations = {

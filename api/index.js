@@ -10,6 +10,7 @@ app.get('/', (req, res, next) => {
 
 app.use('/boardData', require('./boardData'));
 app.use('/todo', require('./todo'));
+app.use('/login', require('./login'));
 
 module.exports = {
   path: 'api',
